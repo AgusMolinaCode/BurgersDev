@@ -1,12 +1,20 @@
 import Layout from '@/components/layout';
 import '@/styles/globals.css'
-import { useState ,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 export default function App({ Component, pageProps }) {
   
+  const cartLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart')) ?? [] : []
+  const [cart, setCart] = useState(cartLS)
+  const [pageReady, setPageReady] = useState(false)
 
+  useEffect(() => {
+    setPageReady(true)
+  }, []);
 
-  const [cart, setCart] = useState([])
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
   
 
   const addToCart = guitar => {
@@ -40,25 +48,19 @@ export default function App({ Component, pageProps }) {
     setCart(updatedCart)
   }
 
-  const getTotal = () => {
-    let total = 0;
-    cart.forEach(guitarState => {
-      total += guitarState.quantity;
-    });
-    return total;
-  }
+  // const getTotal = () => {
+  //   let total = 0;
+  //   cart.forEach(guitarState => {
+  //     total += guitarState.quantity;
+  //   });
+  //   return total;
+  // }
 
-
-  return <Component {...pageProps}
+  return pageReady ? <Component {...pageProps}
     cart={cart}
     addToCart={addToCart}
     removeProduct={removeProduct}
     updateQuantity={updateQuantity}
-    getTotal={getTotal()}
-  >
-    <Layout getTotal={getTotal()}>
-      <Component {...pageProps} />
-      
-    </Layout>
-  </Component>
+    // getTotal={getTotal()}
+  /> : null
 }

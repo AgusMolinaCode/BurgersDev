@@ -11,12 +11,12 @@ export default function BurgerBest({burger}) {
                     <div className='pt-16'>
                         <h1 className='text-center font-secundario text-5xl'>Favorite of the Week</h1>
                     </div>
-                    <div className='flex px-12'>
-                        <div className='w-[50%] flex justify-center'>
-                            <Image src={burger.image} width={600} height={600} alt={'Best-Burger'}/>
+                    <div className='grid mx-auto w-full md:flex '>
+                        <div className='w-[60%] flex mx-auto justify-center'>
+                            <Image className='min-w-[318px]' src={burger.image} width={500} height={500} alt={'Best-Burger'}/>
                         </div>
 
-                        <div className='w-[50%] mt-8 '>
+                        <div className='w-full md:w-[40%] mt-8 mx-auto'>
     
                             <h1 className='text-center font-principal font-bold text-4xl'>{burger.name}</h1>
 
@@ -32,7 +32,7 @@ export default function BurgerBest({burger}) {
                             <h1 className='text-center pt-5 text-5xl font-principal font-bold'>${burger.price}</h1>
 
                             <Link href='/burgers'>
-                                <button className='flex mx-auto mt-5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-3 uppercase text-white font-principal font-[900] text-lg rounded-xl shadow-2xl hover:text-black duration-500'>
+                                <button className='flex mx-auto mt-5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-3 uppercase text-white font-principal font-[900] text-lg rounded-xl shadow-2xl hover:text-black duration-500 items-center'>
                                     VIEW ALL BURGERS
                                     <FaArrowAltCircleRight className='ml-1' />
                                 </button>

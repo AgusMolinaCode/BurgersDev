@@ -27,9 +27,9 @@ export default function Cart({cart,updateQuantity,removeProduct,getTotal}) {
         
         <h1 className='text-center mt-14 font-secundario text-6xl'>Cart</h1>
 
-        <div className='flex gap-2 justify-evenly'>
+        <div className='flex-wrap lg:flex gap-2 justify-evenly'>
 
-            <div className='flex-col'>
+            <div className='flex-col p-2'>
 
                 {cart.length === 0 ? 
                 <div>
@@ -46,8 +46,8 @@ export default function Cart({cart,updateQuantity,removeProduct,getTotal}) {
                           </div>
 
 
-                          <div className='flex'>
-                            <Image width={200} height={280} src={product.image} alt={product.name}/>
+                          <div className='grid mx-auto justify-center lg:flex'>
+                            <Image className='flex mx-auto' width={200} height={280} src={product.image} alt={product.name}/>
 
                             <div>
                               <h1 className='font-principal text-2xl'>{product.name}</h1>
@@ -91,8 +91,8 @@ export default function Cart({cart,updateQuantity,removeProduct,getTotal}) {
             </div>
 
 
-            <div className='flex-col'>
-              <div className='fixed'>
+            <div className='grid p-2 mt-10'>
+              <div className='md:fixed'>
                 <h1 className='text-4xl font-principal'>Products:</h1>
                 <div className='pt-4'>
                     {cart.map(product => (

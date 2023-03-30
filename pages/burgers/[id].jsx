@@ -35,11 +35,11 @@ export default function Burger({ burger,addToCart }) {
       <Layout title={'Burgers - Shop '} description={'Hamburger Delivery - Shop'}></Layout>
 
       <div className='grid 2xl:flex  justify-center mt-2 px-12'>
-        <div className='flex-col justify-end m-12 mt-20 items-center '>
-          <h1 className='text-center font-secundario font-bold text-3xl lg:text-5xl'>{burger.name}</h1>
+        <div className='flex-col justify-end m-2 lg:m-12 mt-20 items-center '>
+          <h1 className='text-center flex mx-auto font-secundario font-bold text-3xl lg:text-5xl'>{burger.name}</h1>
 
-          <div className='w-[500px] flex justify-center items-center mx-auto mt-8'>
-            <p className='text-center font-principal font-bold text-xl '>{burger.description}</p>
+          <div className='w-[318px] lg:w-[500px] flex justify-center items-center mx-auto mt-8'>
+            <p className='text-center p-2 font-principal font-bold text-md lg:text-xl '>{burger.description}</p>
           </div>
 
           <p className='text-center mt-5 font-secundario text-5xl'>${burger.price}</p>
@@ -91,13 +91,13 @@ export default function Burger({ burger,addToCart }) {
         </div>
 
 
-        <div className='flex items-center justify-center mt-10'>
+        <div className='flex items-center mx-auto justify-center mt-10'>
           <Image 
           src={burger.image} 
           width={'800'} 
           height={'500'}  
           alt={burger.name} 
-          className='flex w-[400px] sm:w-[800px]'    
+          className='flex w-[320px] sm:w-[800px]'    
           />
         </div>
       </div>

@@ -1,7 +1,9 @@
 import Head from "next/head"
+import Footer from "./footer"
 import Header from "./header"
 
-export default function Layout({children, title = '', description = '', getTotal}) {
+export default function Layout({children, title = '', description = ''}) {
+
 
   return (
     <>
@@ -10,9 +12,11 @@ export default function Layout({children, title = '', description = '', getTotal
             <meta name="description" content={description}/>
         </Head>
 
-        <Header getTotal={getTotal} />
+        <Header />
 
         {children}
+
+
     </>
   )
 }
