@@ -4,7 +4,10 @@ const nextConfig = {
   swcMinify: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['res.cloudinary.com']
+    domains: [
+      'res.cloudinary.com',
+      's3-eu-central-1.amazonaws.com',
+    ]
   }
 }
 

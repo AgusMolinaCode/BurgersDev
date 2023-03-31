@@ -1,4 +1,3 @@
-import Layout from '@/components/layout';
 import '@/styles/globals.css'
 import { useState, useEffect } from 'react'
 
@@ -31,8 +30,6 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-
-
   const removeProduct = id => {
     const updatedCart = cart.filter(product => product.id !== id)
     setCart(updatedCart)
@@ -48,19 +45,16 @@ export default function App({ Component, pageProps }) {
     setCart(updatedCart)
   }
 
-  // const getTotal = () => {
-  //   let total = 0;
-  //   cart.forEach(guitarState => {
-  //     total += guitarState.quantity;
-  //   });
-  //   return total;
-  // }
+  const clearCart = () => {
+    setCart([]);
+  }
+  
 
   return pageReady ? <Component {...pageProps}
     cart={cart}
     addToCart={addToCart}
     removeProduct={removeProduct}
     updateQuantity={updateQuantity}
-    // getTotal={getTotal()}
+    clearCart={clearCart}
   /> : null
 }

@@ -3,6 +3,7 @@ import Layout from '@/components/layout';
 import newsImages from '@/data/news_data/newsdata';
 import React, { useState, useCallback, useEffect } from 'react';
 import ImageViewer from 'react-simple-image-viewer';
+import Image from 'next/image';
 
 export default function News() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -41,11 +42,12 @@ export default function News() {
       <div className='flex flex-wrap gap-4 justify-evenly p-2'>
         {newsImages.map((image, index) => (
           <div className='w-[500px]' key={index}>
-            <img
+            <Image
               className='rounded-xl md:h-[320px] sm:h-[220px]'
               src={image.src}
               onClick={() => openImageViewer(index)}
               width='500'
+              height='320'
               style={{ margin: '2px' }}
               alt={image.alt}
             />
