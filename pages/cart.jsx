@@ -70,7 +70,6 @@ export default function Cart({cart,updateQuantity,removeProduct,clearCart}) {
       height={dimensions.height}
       tweenDuration={5000}
       numberOfPieces={1000}
-      recycle={false}
     />}
 
       <Layout
@@ -80,7 +79,7 @@ export default function Cart({cart,updateQuantity,removeProduct,clearCart}) {
 
       <div className=' '>
         
-        <h1 className='text-center mt-14 font-secundario text-6xl'>Cart</h1>
+        <h1 className='text-center mt-14 font-secundario text-5xl'>Cart</h1>
         <div>
 
         </div>
